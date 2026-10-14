@@ -1,0 +1,12 @@
+#!/bin/bash
+# =============================================================================
+# CONFIGURATION TEMPLATE - Copy to config.sh and update with your parameters
+# =============================================================================
+
+export AWS_REGION="us-east-1"
+export DB_USER="dbadmin"
+export DB_PASSWORD="YourSecurePasswordHere123!"
+export DB_NAME="salesdb"
+export S3_BUCKET="sales-invoices-storage-$(date +%s)"
+export SES_SENDER="notifications@yourdomain.com"
+export PROJECT_PREFIX="serverless-sales"

@@ -1,0 +1,21 @@
+{
+  "Comment": "Procesar nota de venta: PDF -> S3 -> Email",
+  "StartAt": "GenerarPDF",
+  "States": {
+    "GenerarPDF": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:examen01-generar_pdf",
+      "Next": "SubirS3"
+    },
+    "SubirS3": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:examen01-subir_s3",
+      "Next": "EnviarEmail"
+    },
+    "EnviarEmail": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:examen01-enviar_email",
+      "End": true
+    }
+  }
+}
